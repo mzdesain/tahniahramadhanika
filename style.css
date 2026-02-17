@@ -1,0 +1,189 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    background-color: #f8f9fa;
+    padding: 20px;
+}
+
+.wrapper {
+    max-width: 100%;
+    margin: auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    max-width: 400px; /* Maksimal 400px, tetapi bisa mengecil di layar kecil */
+}
+
+.twibbon-img {
+    width: 100%; /* Agar bisa menyesuaikan dengan container */
+    height: auto; /* Agar proporsi tetap sesuai */
+    border-radius: 10px;
+}
+
+.text-overlay {
+    position: absolute;
+    width: 100%;
+    bottom: 13%; /* Agar tetap proporsional */
+    left: 0;
+    text-align: center;
+    color: #000000;
+    line-height: 1.1;
+    letter-spacing: -01px;
+}
+
+.name {
+    font-weight: bold;
+    font-size: 12px; /* Lebih besar agar lebih terbaca */
+    color: rgb(0, 0, 0);
+}
+
+.position {
+    font-size: 9px; /* Lebih besar agar lebih terbaca */
+    color: rgb(0, 0, 0);
+}
+
+.input-section {
+    margin-top: 15px;
+    padding: 0 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.input-section input,
+.input-section button {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+button {
+    padding: 10px;
+    background-color: #045c27;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 480px) {
+    .wrapper {
+        padding: 15px;
+    }
+}
+    .text-overlay {
+    position: absolute;
+    width: 100%;
+    bottom: 14%; /* Dinaikkan agar mendekati garis */
+    left: 0;
+    text-align: center;
+    color: #fff;
+    line-height: 1.1;
+    transform: translateY(-10%); /* Menaikkan posisi teks secara fleksibel */
+}
+
+@media (max-width: 480px) {
+    .text-overlay {
+        bottom: 14%; /* Tambah naik untuk layar kecil */
+        transform: translateY(-15%);
+    }
+}
+
+.download-popup {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.download-popup.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.popup-content {
+    background: white;
+    padding: 20px 30px;
+    border-radius: 12px;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.spinner {
+    width: 30px;
+    height: 30px;
+    border: 3px solid #eee;
+    border-top: 3px solid #045c27;
+    border-radius: 50%;
+    margin: 0 auto 10px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+
+.footer {
+    padding: 30px 20px;
+    text-align: center;
+    background: #ffffff00;
+    color: #000000;
+    letter-spacing: -01px;
+    font-size: 13px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.social-icons a {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.social-icons svg {
+    width: 100%;
+    height: 100%;
+}
+
+.social-icons a:hover {
+    transform: scale(1.2);
+}
+
+.credit {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
